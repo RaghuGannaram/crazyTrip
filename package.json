@@ -1,0 +1,19 @@
+{
+  "name": "travelblog",
+  "version": "1.0.0",
+  "description": "it contains the backend software of the travelblog website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "ItsMeOmi",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^5.12.14"
+  }
+}

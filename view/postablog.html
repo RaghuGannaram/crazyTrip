@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>travelblog | Post A Blog Page</title>
+    <link rel="shortcut icon" href="public/favicon.png" type="image/png">
+    <!-- <script src='main.js'></script> -->
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="branding">
+                <a href="./home">
+                    <h1>TravelBlog</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./home">Home</a></li>
+                    <li><a href="./blogs" class="current">Blogs</a></li>
+                    <li id="silink"><a href="./signin">Sign in</a></li>
+                    <li id="solink"><a href="./usersignout">Sign Out</a></li>
+                    <li><a href="./about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="postablog">
+        <form action="./postblog" method="post" name = "blogform" onsubmit="handleinput(event)">
+            <div class="container">
+                <div class="bloginfo">
+                    <h2 class="blogtitle">
+                        <label for="blogtitle">Title : </label>
+                        <input type="text" name="blogtitle" id="blogtitle">
+                    </h2>
+                    <p class="blogauthor">
+                        <label for="blogauthor">Author : </label>
+                        <input type="text" name="blogauthor" id="blogauthor">
+                    </p>
+                </div>
+                <div class="blogcontent">
+                    <label for="blogcontent">Write the blog here : </label>
+                    <textarea type="textarea" name="blogcontent" rows="10" id="blogcontent"></textarea>
+                </div>
+                <div class="submitbtn">
+                    <input type="submit" value="post" id="submitpost">
+                </div>
+            </div>
+        </form>
+    </section>
+    <script src="/javascript/main.js"></script>
+</body>
+
+</html>
