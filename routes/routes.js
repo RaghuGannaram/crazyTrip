@@ -1,6 +1,5 @@
 const fs = require("fs");
 const url = require("url");
-const querystring = require("querystring");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const db_model = require("../controller/db_module");
@@ -135,11 +134,12 @@ const routeHandlers = (req, res) => {
         signupdata += chunk;
       });
       req.on("end", () => {
-        let qs = querystring.parse(signupdata);
+        console.log("signupdata",signupdata)
+        let searchParams = new URLSearchParams(signupdata);
         let userobj ={
-          username : qs["username"],
-          usermail : qs["usermail"],
-          userpassword : qs["userpassword"]
+          username : searchParams.get("username"),
+          usermail : searchParams.get("usermail"),
+          userpassword : searchParams.get("userpassword")
         }
         db_model.signupuser(req, res, userobj);
       });
@@ -152,10 +152,11 @@ const routeHandlers = (req, res) => {
         signindata += chunk;
       });
       req.on("end", () => {
-        let qs = querystring.parse(signindata);
+        console.log("signin data", signindata)
+        let searchParams = new URLSearchParams(signindata);
         let userobj ={
-          usermail : qs["usermail"],
-          userpassword : qs["userpassword"]
+          usermail : searchParams.get("usermail"),
+          userpassword : searchParams.get("userpassword")
         }
         db_model.signinuser(req, res, userobj);
       });
@@ -168,11 +169,11 @@ const routeHandlers = (req, res) => {
         userpostdata += chunk;
       });
       req.on("end", () => {
-        let qs = querystring.parse(userpostdata);
+        let searchParams = new URLSearchParams(userpostdata);
         let blogobj = {
-          title : qs["blogtitle"],
-          author : qs["blogauthor"],
-          body : qs["blogcontent"]
+          title : searchParams.get("blogtitle"),
+          author : searchParams.get("blogauthor"),
+          body : searchParams.get("blogcontent")
         }
         db_model.postblog(req, res, blogobj);
       });
