@@ -1,0 +1,343 @@
+:root {
+  /* --primary : 200,200,200; */
+  /* --primary-dark : 180, 180, 180; */
+  /* --primary-light : 255, 255, 255; */
+  /* --primary-bg : 17, 34, 51; */
+  /* --secondary-bg : 85, 107, 47; */
+  --special-bg: 28, 36, 21;
+
+  --primary: 39, 68, 114;
+  --primary-light: 49, 85, 145;
+  --primary-dark: 20, 39, 69;
+  --primary-bg: 255, 255, 255;
+  --secondary-bg: 88, 133, 175;
+}
+/* ------------global--------------- */
+body {
+  font-family: cursive;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  color: rgb(var(--primary));
+  background-color: rgb(var(--primary-bg));
+  
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: rgb(var(--primary));
+}
+a:hover {
+  color: rgb(var(--primary-light));
+}
+.container {
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* -------------header--------------- */
+header {
+  background-image: linear-gradient(
+    to top right,
+    rgba(var(--secondary-bg), 0.2),
+    rgba(var(--secondary-bg), 0.8)
+  );
+}
+header .container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header li {
+  display: inline;
+  padding: 0 20px 0 20px;     
+}
+header .current {
+  color: rgb(var(--primary-dark));
+}
+
+/* -------------footer------------- */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-image: linear-gradient(
+    to top right,
+    rgba(var(--secondary-bg), 0.2),
+    rgba(var(--secondary-bg), 0.8)
+  );
+}
+
+/* ---------------home-------------- */
+#wallpaper {
+  height: 80vh;
+  background: url(/images/card-image-1.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+#wallpaper .quotes {
+  margin-top: 100px;
+  text-align: center;
+  color: #fff;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1em;
+  column-gap: 1em;
+  padding: 10px;
+}
+
+.grid-item{
+  max-width: 100%;
+  height: 100%;
+}
+
+.grid-potrait{
+  grid-row : span 2/ auto;
+}
+
+/* --------------------sign in & sign up----------------- */
+#signin, #signup{
+  height: 80vh;
+  font-size: 16px;
+  background: url(/images/card-image-2.jpg) center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-block, .signup-block {
+  background-image: linear-gradient(
+    to top right,
+    rgba(var(--secondary-bg), 0.2),
+    rgba(var(--secondary-bg), 0.8)
+  );
+  backdrop-filter: blur(10px);
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: var(--primary-dark) 2px solid;
+}
+
+.signin-form, .signup-form {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.input-field, .password-field{
+  color: rgb(var(--primary));
+  margin-top: 10px;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: rgb(var(--primary-dark)) 2px solid;
+}
+
+.submit-button{
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color:rgb(var(--primary-light));
+}
+.input-field::placeholder, .password-field::placeholder{
+  color: rgb(var(--primary));
+}
+
+.signup-block{
+  height: 450px;
+}
+
+/* --------------about------------------- */
+#about{
+  text-align: center;
+  height: 100vh;
+  background: url(/images/card-image-4.jpg) center center fixed;
+}
+
+/* ---------------blogs---------------- */
+.wannapost {
+  height: 100px;
+  text-align: center;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.blogpost {
+  background-image: linear-gradient(
+    to top right,
+    rgba(var(--special-bg), 0.2),
+    rgba(var(--special-bg), 0.8)
+  );
+  text-align: center;
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 5px;
+  border: var(--primary-bg) 2px solid;
+}
+.bloginfo {
+  border-bottom: 2px solid var(--primary-dark);
+  height: 100px;
+}
+.blogtitle {
+  float: left;
+  margin-top: 30px;
+  padding-left: 30px;
+}
+.blogauthor {
+  float: right;
+  margin-top: 60px;
+  padding-right: 30px;
+}
+.blogcontent {
+  margin-top: 20px;
+  text-align: center;
+}
+.bloglikes {
+  text-align: right;
+}
+
+.likebtn {
+  background-color: rgb(var(--secondary-bg));
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+}
+
+.blogcomment {
+  margin: 10px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.usercomment input {
+  background-color: rgb(var(--primary-light));
+  color: darkkhaki;
+  font-weight: 100;
+  font-size: medium;
+  font-family: cursive;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.usercomment button {
+  background-color: rgb(var(--secondary-bg));
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+}
+
+/* ----------------postblog----------------- */
+#postablog .blogcontent {
+  padding: 40px;
+}
+#postablog form input[type="text"] {
+  color: rgb(var(--primary));
+  border: none;
+  outline: none;
+  background: unset;
+  border-bottom: 1px solid olive;
+}
+#postablog .blogcontent textarea {
+  height: 500px;
+  width: 90%;
+  margin-top: 30px;
+  padding: 20px;
+  font-style: italic;
+  font-weight: 100;
+  font-size: medium;
+  font-family: cursive;
+  color: rgb(var(--primary));
+  border-radius: 15px;
+  outline: none;
+  background: unset;
+}
+.submitbtn {
+  text-align: center;
+}
+#submitpost {
+  background-color: rgb(var(--primary-dark));
+  height: 40px;
+  width: 80px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 1px rgb(var(--primary-dark));
+}
+
+/* ------------------media-------------- */
+@media (max-width:  992px) {
+  header {
+    height: 140px;
+  }
+  header .branding,
+  header nav {
+    text-align: center;
+    float: none;
+  }
+  #about .container {
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  #about p {
+    margin-top: 30px;
+  }
+  .grid-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  #wallpaper {
+    background: url(../images/card-image-1.jpg) no-repeat -720px -200px;
+    height: 500px;
+  }
+  #about .container {
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  #about p {
+    margin-top: 30px;
+  }
+
+  .grid-container{
+    display: block;
+  }
+
+  .blogpost {
+    width: 300px;
+  }
+
+  .blogtitle {
+    float: none;
+  }
+  .blogauthor {
+    float: none;
+    padding-left: 30px;
+  }
+  .bloginfo {
+    height: 150px;
+  }
+}

@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>travelblog | Sign Up Page</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="public/favicon.png" type="image/png">
+    <title>travelblog | Sign Up Page</title>
 </head>
 
 <body>
@@ -30,16 +31,22 @@
     </header>
 
     <section id="signup">
-        <div class="signupblock">
-            <form action="/usersignup" method="POST">
+        <div class="signup-block">
+            <form action="/usersignup" method="POST" class="signup-form">
                 <h1>Sign Up </h1>
-                <label for="username">User Name :</label><br>
-                <input type="text" name="username" id="username" placeholder="Enter your Username"><br><br>
-                <label for="usermail">Mail ID :</label><br>
-                <input type="email" name="usermail" id="usermail" placeholder="Enter your mail id"><br><br>
-                <label for="userpassword">Password :</label><br>
-                <input type="password" name="userpassword" id="userpassword"><br><br>
-                <input type="submit" value="submit">
+                <div>
+                    <label for="username">User Name :</label><br>
+                    <input type="text" name="username" id="username" placeholder="Enter your Username" class="input-field"><br><br>
+                </div>
+                <div>
+                    <label for="usermail">Mail ID :</label><br>
+                    <input type="email" name="usermail" id="usermail" placeholder="Enter your mail id" class="input-field"><br><br>
+                </div>
+                <div>
+                    <label for="userpassword">Password :</label><br>
+                    <input type="password" name="userpassword" id="userpassword" class="password-field"><br><br>
+                </div>
+                <button class="submit-button" type="submit" value="submit" class="submit-button" >Sign Up</button>
             </form>
         </div>
     </section>

@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>travelblog | Sign In Page</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="public/favicon.png" type="image/png">
+    <title>travelblog | Sign In Page</title>
 </head>
 
 <body>
@@ -29,17 +30,22 @@
         </div>
     </header>
     <section id="signin">
-        <div class="signinblock">
-            <form action="/usersignin" method="POST">
-                <h1>Sign In </h1>
-                <label for="usermail">Mail ID :</label><br>
-                <input type="email" name="usermail" id="usermail" placeholder="Enter your mail"><br><br>
-                <label for="userpassword">Password :</label><br>
-                <input type="password" name="userpassword" id="userpassword"><br>
-                <input type="submit" value="submit">
+        <div class="signin-block">
+            <h1>Sign In </h1>
+            <form action="/usersignin" method="POST" class="signin-form">
+                <div>
+                    <label for="usermail">Mail ID :</label><br>
+                    <input type="email" name="usermail" id="usermail" class="input-field" placeholder="Enter your mail"><br><br>
+                </div>
+                <div>
+                    <label for="userpassword">Password :</label><br>
+                    <input type="password" name="userpassword" id="userpassword" class="password-field"><br>
+                </div>
+                <div>
+                    <button class="submit-button" type="submit" value="submit" class="submit-button" >Login</button>
+                </div>
             </form>
-            <p>Dont have an account..? <a href="./signup">Sign Up</a></li>
-            </p>
+            <p>Dont have an account..? <a href="./signup">Sign Up</a></p>
         </div>
     </section>
     <footer>
