@@ -1,12 +1,19 @@
 const http = require("http");
+const fs = require("fs");
+const path = require("path");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const routeHandler = require("./routes/routes.js");
 
 const port = process.env.PORT || 3000;
-const runHelmet = helmet();
+const runHelmet = helmet.contentSecurityPolicy({
+    directives: {
+        "script-src": ["'self'", "'unsafe-inline'"],
+      },
+});
 const logger = morgan("dev", {
-    // skip: (req, res) => (res.statusCode < 400)
+    // skip: (req, res) => (res.statusCode < 400),
+    // stream: fs.createWriteStream(path.join(__dirname,"/logs/" , "access.log"), {flags: 'w'})
 });
 
 

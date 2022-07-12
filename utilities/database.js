@@ -11,4 +11,6 @@ function connectToDataBase() {
     .catch((err) => console.log(err));
 }
 
-module.exports.connectToDataBase = connectToDataBase;
+module.exports = {
+  connectToDataBase,
+};
