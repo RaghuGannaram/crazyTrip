@@ -1,3 +1,4 @@
+const fs = require("fs");
 const dotenv = require("dotenv");
 const { htmlDocs } = require("./htmlHandler");
 const { styleSheets } = require("./styleSheetHandler");
@@ -5,6 +6,7 @@ const { mainScript } = require("./mainScriptHandler");
 const { publicImages } = require("./publicAssetHandler");
 const { dataBase } = require("./dataBaseHandler");
 const { connectToDataBase } = require("../utilities/Database.js");
+const { validPathList } = require("../utilities/validPaths");
 
 dotenv.config();
 connectToDataBase();
@@ -20,6 +22,14 @@ const routeHandlers = (req, res) => {
   dataBase(req, res, path);
   publicImages(req, res, path);
 
+  if (!validPathList.includes(path)) {
+    fs.readFile("./view/pageNotFound.html", null, (err, html) => {
+      if (err) throw err;
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.write(html);
+      res.end();
+    });
+  }
 };
 
 module.exports = routeHandlers;

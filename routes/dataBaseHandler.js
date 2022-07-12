@@ -92,15 +92,6 @@ function dataBase(req, res, path) {
       }
     }
 
-    default: {
-      // if(path.includes("public") || path == "/css/style.css"){
-      //   break;
-      // }
-      // else{
-      //   renderHTML("../frontend/pageNotFound.html");
-      //   break;
-      // }
-    }
   }
 }
 
