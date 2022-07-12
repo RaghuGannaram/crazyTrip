@@ -31,10 +31,6 @@ else{
 }
 
 
-console.log(readCookie("username"))
-
-
-
 function fetchblogs(){
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "./fetchblogs", true);
@@ -95,8 +91,6 @@ function postLike(event){
   var likeid =event.target.id;
   var userid = readCookie("userId");
 
-  console.log("sliced blog id  --->  "+ blogid);
-
   if(isUserSignedIn()){
     let likeobj ={
       blogid : blogid,
@@ -105,7 +99,6 @@ function postLike(event){
     let xhr =new XMLHttpRequest();
     xhr.open("POST","./postlike", true)
     xhr.onload= function(){
-      console.log("in onload");
       document.getElementById("blogmarkup").innerHTML = "";
       fetchblogs();
     }
@@ -132,14 +125,11 @@ function postComment(event){
     commentator : commentator
   }
 
-  console.log(commentdata);
-
   if(isUserSignedIn()){
     if(commentdata.usercomment != ""){
       let xhr = new XMLHttpRequest();
       xhr.open("POST","./postcomment", true)
       xhr.onload = function (){
-        console.log("in onload");
         document.getElementById("blogmarkup").innerHTML = "";
         fetchblogs();
       }

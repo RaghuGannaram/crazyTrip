@@ -1,36 +1,25 @@
 const fs = require("fs");
 const url = require("url");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const db_model = require("../controller/db_module");
 const readCookie = require("../utilities/cookieParser");
 const {styleSheets, publicImages} = require("./commonHandler");
+const {connectToDataBase} = require("../utilities/Database.js");
 
 dotenv.config();
-
-const connection = mongoose
-  .connect(process.env.MongoDB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then(() => console.log("connected to MongoDB Database"))
-  .catch((err) => console.log(err));
+connectToDataBase();
 
 const routeHandlers = (req, res) => {
   const baseURL =  req.protocol + '://' + req.headers.host + '/';
   const reqURL = new URL(req.url,baseURL);
-  // console.log(reqURL);
 
   const path = reqURL.pathname;
-  console.log("\n \t current route is " + path);
 
   styleSheets(req, res, path);
   publicImages(req, res, path);
 
   const renderHTML = (fileLocation) => {
     fs.readFile(fileLocation, null, (err, html) => {
-      console.log("\n \t current path is " + fileLocation);
       if (err) throw err;
       res.writeHead(200, { "Content-Type": "text/html" });
       res.write(html);
@@ -99,7 +88,6 @@ const routeHandlers = (req, res) => {
         signupdata += chunk;
       });
       req.on("end", () => {
-        console.log("signupdata", signupdata);
         let searchParams = new URLSearchParams(signupdata);
         let userobj = {
           username: searchParams.get("username"),
@@ -117,7 +105,6 @@ const routeHandlers = (req, res) => {
         signindata += chunk;
       });
       req.on("end", () => {
-        console.log("signin data", signindata);
         let searchParams = new URLSearchParams(signindata);
         let userobj = {
           usermail: searchParams.get("usermail"),
@@ -152,8 +139,6 @@ const routeHandlers = (req, res) => {
           commentdata += chunk;
         });
         req.on("end", () => {
-          console.log("the commentdata " + commentdata);
-          console.log("the type of commentdata " + typeof commentdata);
           db_model.postcomment(req, res, commentdata);
         });
         break;
@@ -171,8 +156,6 @@ const routeHandlers = (req, res) => {
           likedata += chunk;
         });
         req.on("end", () => {
-          console.log("the likedata " + likedata);
-          console.log("the type of likedata " + typeof likedata);
           db_model.postlike(req, res, likedata);
         });
         break;
@@ -185,7 +168,6 @@ const routeHandlers = (req, res) => {
 
     case "/javascript/main.js": {
       fs.readFile("./utilities/main.js", null, (err, jscode) => {
-        console.log("\n \t current path is  ../utilities/main.js");
         if (err) throw err;
         res.writeHead(200, { "Content-Type": "application/javascript" });
         res.write(jscode);
@@ -195,7 +177,6 @@ const routeHandlers = (req, res) => {
     }
 
     default: {
-      // console.log("\n \t print from default route" + path);
       // if(path.includes("public") || path == "/css/style.css"){
       //   break;
       // }

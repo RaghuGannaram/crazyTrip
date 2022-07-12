@@ -8,7 +8,6 @@ db_module.blogposts = (req, res)=>{
     {},
     (err, blogs)=>{
       if(blogs == null){
-        console.log("\n \t No posted blogs to show");
         res.end(
           `<div> <h1 style="text-align: center;color:blue;>"No posted blogs to show</h1><a href="./signin">click here to go back</a></div>`
         );
@@ -31,12 +30,10 @@ db_module.signupuser = (req, res, userobj) => {
   user
     .save()
     .then((data) => {
-      console.log("\n \tregistration data " + data);
       res.writeHead(302, { Location: "/signin" });
       res.end();
     })
     .catch((err) => {
-      console.log("\n \t " + err.message);
       res.end(
         '<div><h1 style="text-align: center;color: red;">' +
           err.message +
@@ -49,7 +46,6 @@ db_module.signinuser = (req, res, userobj) => {
     { usermail: userobj.usermail, userpassword: userobj.userpassword },
     (err, person) => {
       if (person == null) {
-        console.log("\n \t Invalid User");
         res.end(
           '<div><h1 style="text-align: center;color: red;">Invalid username or password</h1><a href="./signin">click here to go back</a></div>'
         );
@@ -62,7 +58,6 @@ db_module.signinuser = (req, res, userobj) => {
             "username = " + person["username"],
           ],
         });
-        console.log(person);
         res.end();
       }
     }
@@ -78,12 +73,10 @@ db_module.postblog = (req, res, blogobj) =>{
   blog
     .save()
     .then((data)=>{
-      console.log("\n \t posted a blog" + data);
       res.writeHead(302,{Location:"/blogs"});
       res.end();
     })
     .catch((err)=>{
-      console.log("\n \t " + err.message);
       res.end(
         err.message
       )
@@ -104,7 +97,6 @@ db_module.postcomment = (req, res, commentdata)=>{
     }
     },
     ()=>{
-      console.log("Updated the comment successfully")
       res.end()
     }
   )
