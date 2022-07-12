@@ -12,6 +12,7 @@
   --primary-bg: 255, 255, 255;
   --secondary-bg: 88, 133, 175;
 }
+
 /* ------------global--------------- */
 body {
   font-family: cursive;
@@ -20,19 +21,23 @@ body {
   padding: 0;
   color: rgb(var(--primary));
   background-color: rgb(var(--primary-bg));
-  
+
 }
+
 ul {
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
   color: rgb(var(--primary));
 }
+
 a:hover {
   color: rgb(var(--primary-light));
 }
+
 .container {
   width: 95%;
   margin: auto;
@@ -41,35 +46,38 @@ a:hover {
 
 /* -------------header--------------- */
 header {
-  background-image: linear-gradient(
-    to top right,
-    rgba(var(--secondary-bg), 0.2),
-    rgba(var(--secondary-bg), 0.8)
-  );
+  background-image: linear-gradient(to top right,
+      rgba(var(--secondary-bg), 0.2),
+      rgba(var(--secondary-bg), 0.8));
 }
-header .container{
+
+header .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 header li {
   display: inline;
-  padding: 0 20px 0 20px;     
+  padding: 0 20px 0 20px;
 }
+
 header .current {
   color: rgb(var(--primary-dark));
+}
+
+.nav .hamburger-icon {
+  display: none;
 }
 
 /* -------------footer------------- */
 footer {
   text-align: center;
   padding: 10px;
-  background-image: linear-gradient(
-    to top right,
-    rgba(var(--secondary-bg), 0.2),
-    rgba(var(--secondary-bg), 0.8)
-  );
+  background-image: linear-gradient(to top right,
+      rgba(var(--secondary-bg), 0.2),
+      rgba(var(--secondary-bg), 0.8));
 }
 
 /* ---------------home-------------- */
@@ -78,13 +86,14 @@ footer {
   background: url(/images/card-image-1.jpg) no-repeat center center fixed;
   background-size: cover;
 }
+
 #wallpaper .quotes {
   margin-top: 100px;
   text-align: center;
   color: #fff;
 }
 
-.grid-container{
+.grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 1em;
@@ -92,17 +101,18 @@ footer {
   padding: 10px;
 }
 
-.grid-item{
+.grid-item {
   max-width: 100%;
   height: 100%;
 }
 
-.grid-potrait{
-  grid-row : span 2/ auto;
+.grid-potrait {
+  grid-row: span 2/ auto;
 }
 
 /* --------------------sign in & sign up----------------- */
-#signin, #signup{
+#signin,
+#signup {
   height: 80vh;
   font-size: 16px;
   background: url(/images/card-image-2.jpg) center center fixed;
@@ -113,12 +123,11 @@ footer {
   align-items: center;
 }
 
-.signin-block, .signup-block {
-  background-image: linear-gradient(
-    to top right,
-    rgba(var(--secondary-bg), 0.2),
-    rgba(var(--secondary-bg), 0.8)
-  );
+.signin-block,
+.signup-block {
+  background-image: linear-gradient(to top right,
+      rgba(var(--secondary-bg), 0.2),
+      rgba(var(--secondary-bg), 0.8));
   backdrop-filter: blur(10px);
   height: 400px;
   width: 300px;
@@ -131,14 +140,16 @@ footer {
   border: var(--primary-dark) 2px solid;
 }
 
-.signin-form, .signup-form {
+.signin-form,
+.signup-form {
   flex-grow: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.input-field, .password-field{
+.input-field,
+.password-field {
   color: rgb(var(--primary));
   margin-top: 10px;
   padding: 5px;
@@ -148,24 +159,26 @@ footer {
   border-bottom: rgb(var(--primary-dark)) 2px solid;
 }
 
-.submit-button{
+.submit-button {
   width: 100%;
   height: 40px;
   border-radius: 5px;
   border: none;
   outline: none;
-  background-color:rgb(var(--primary-light));
+  background-color: rgb(var(--primary-light));
 }
-.input-field::placeholder, .password-field::placeholder{
+
+.input-field::placeholder,
+.password-field::placeholder {
   color: rgb(var(--primary));
 }
 
-.signup-block{
+.signup-block {
   height: 450px;
 }
 
 /* --------------about------------------- */
-#about{
+#about {
   text-align: center;
   height: 100vh;
   background: url(/images/card-image-4.jpg) center center fixed;
@@ -178,12 +191,11 @@ footer {
   padding-top: 30px;
   box-sizing: border-box;
 }
+
 .blogpost {
-  background-image: linear-gradient(
-    to top right,
-    rgba(var(--secondary-bg), 0.2),
-    rgba(var(--secondary-bg), 0.8)
-  );
+  background-image: linear-gradient(to top right,
+      rgba(var(--secondary-bg), 0.2),
+      rgba(var(--secondary-bg), 0.8));
   text-align: center;
   width: 90%;
   margin: 50px auto;
@@ -191,24 +203,29 @@ footer {
   border-radius: 5px;
   border: var(--primary-bg) 2px solid;
 }
+
 .bloginfo {
   border-bottom: 2px solid var(--primary-dark);
   height: 100px;
 }
+
 .blogtitle {
   float: left;
   margin-top: 30px;
   padding-left: 30px;
 }
+
 .blogauthor {
   float: right;
   margin-top: 60px;
   padding-right: 30px;
 }
+
 .blogcontent {
   margin-top: 20px;
   text-align: center;
 }
+
 .bloglikes {
   text-align: right;
 }
@@ -250,6 +267,7 @@ footer {
 #postablog .blogcontent {
   padding: 40px;
 }
+
 #postablog form input[type="text"] {
   color: rgb(var(--primary));
   border: none;
@@ -257,6 +275,7 @@ footer {
   background: unset;
   border-bottom: 2px solid rgb(var(--primary));
 }
+
 #postablog .blogcontent textarea {
   height: 500px;
   width: 90%;
@@ -271,9 +290,11 @@ footer {
   outline: none;
   background: unset;
 }
+
 .submitbtn {
   text-align: center;
 }
+
 #submitpost {
   background-color: rgb(var(--secondary-bg));
   height: 40px;
@@ -285,24 +306,25 @@ footer {
 }
 
 /* ------------------media-------------- */
-@media (max-width:  992px) {
-  header {
-    height: 140px;
-  }
+@media (max-width: 992px) {
+
   header .branding,
   header nav {
     text-align: center;
     float: none;
   }
+
   #about .container {
     width: 75%;
     margin: auto;
     margin-top: 20px;
   }
+
   #about p {
     margin-top: 30px;
   }
-  .grid-container{
+
+  .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
   }
@@ -313,16 +335,64 @@ footer {
     background: url(../images/card-image-1.jpg) no-repeat -720px -200px;
     height: 500px;
   }
+
+  header {
+    position: relative;
+  }
+
+  .nav .hamburger-icon {
+    display: block;
+  }
+
+  .nav li:not(:last-child) {
+    display: none;
+  }
+
+  .nav.responsive {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background-image: linear-gradient(to top right,
+        rgba(var(--secondary-bg), 0.1),
+        rgba(var(--secondary-bg), 0.7));
+    z-index: 3;
+  }
+
+  .nav.responsive .hamburger-icon {
+    display: block;
+    margin: -50px 17px auto auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .nav.responsive li {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: rgb(var(--secondary-bg));
+  }
+
+  .nav.responsive li:last-child {
+    background-color: transparent;
+  }
+
   #about .container {
     width: 75%;
     margin: auto;
     margin-top: 20px;
   }
+
   #about p {
     margin-top: 30px;
   }
 
-  .grid-container{
+  .grid-container {
     display: block;
   }
 
@@ -333,10 +403,12 @@ footer {
   .blogtitle {
     float: none;
   }
+
   .blogauthor {
     float: none;
     padding-left: 30px;
   }
+
   .bloginfo {
     height: 150px;
   }

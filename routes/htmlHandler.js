@@ -1,4 +1,5 @@
 const fs = require("fs");
+const readCookie = require("../utilities/cookieParser");
 
 function htmlDocs(req, res, path) {
   const renderHTML = (fileLocation) => {

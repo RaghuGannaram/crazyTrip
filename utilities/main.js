@@ -153,5 +153,15 @@ function handleinput(event){
   }
 }
 
+function toggleMenu() {
+  console.log("hello")
+  let icon = document.getElementById("nav")
+  if (icon.className === "nav") {
+      icon.className += " responsive";
+  } else {
+      icon.className = "nav";
+  }
+}
+
 
 
