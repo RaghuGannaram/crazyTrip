@@ -5,6 +5,7 @@
 
 # Environment
 .env
+/Docs
 
 # User-specific files
 *.rsuser

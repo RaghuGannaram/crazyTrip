@@ -34,5 +34,5 @@ const httpServer = http.createServer((req, res) => {
 });
 
 httpServer.listen(port, () => {
-  console.log(`travelblog started at 127.0.0.1:${port}`);
+  console.log(`crazyTrip started at 127.0.0.1:${port}`);
 });

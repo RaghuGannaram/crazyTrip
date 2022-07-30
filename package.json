@@ -1,7 +1,7 @@
 {
-  "name": "travelblog",
+  "name": "crazyTrip",
   "version": "1.0.0",
-  "description": "it contains the backend software of the travelblog website",
+  "description": "it contains the backend software of the crazyTrip website",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
