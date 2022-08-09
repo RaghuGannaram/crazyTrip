@@ -1,5 +1,5 @@
 {
-  "name": "crazyTrip",
+  "name": "crazy-trip",
   "version": "1.0.0",
   "description": "it contains the backend software of the crazyTrip website",
   "main": "index.js",
