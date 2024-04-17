@@ -1,5 +1,5 @@
 const fs = require("fs");
-const readCookie = require("../utilities/cookieParser");
+const readCookie = require("../utils/cookieParser");
 
 function htmlDocs(req, res, path) {
   const renderHTML = (fileLocation) => {
@@ -13,32 +13,32 @@ function htmlDocs(req, res, path) {
   
   switch (path) {
     case "/": {
-      renderHTML("./view/home.html");
+      renderHTML("./src/view/home.html");
       break;
     }
     case "/home": {
-      renderHTML("./view/home.html");
+      renderHTML("./src/view/home.html");
       break;
     }
     case "/blogs": {
-      renderHTML("./view/blogs.html");
+      renderHTML("./src/view/blogs.html");
       break;
     }
     case "/signin": {
-      renderHTML("./view/signin.html");
+      renderHTML("./src/view/signin.html");
       break;
     }
     case "/signup": {
-      renderHTML("./view/signup.html");
+      renderHTML("./src/view/signup.html");
       break;
     }
     case "/about": {
-      renderHTML("./view/about.html");
+      renderHTML("./src/view/about.html");
       break;
     }
     case "/postablog": {
       if (readCookie(req.headers.cookie, "isSignedIn") == "true") {
-        renderHTML("./view/postablog.html");
+        renderHTML("./src/view/postablog.html");
         break;
       } else {
         res.writeHead(302, { Location: "/signin" });

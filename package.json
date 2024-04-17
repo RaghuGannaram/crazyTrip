@@ -1,21 +1,61 @@
 {
-  "name": "crazy-trip",
-  "version": "1.0.0",
-  "description": "it contains the backend software of the crazyTrip website",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "author": "ItsMeOmi",
-  "license": "MIT",
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  },
-  "dependencies": {
-    "dotenv": "^10.0.0",
-    "helmet": "^5.1.0",
-    "mongoose": "^5.12.14",
-    "morgan": "^1.10.0"
-  }
+    "name": "crazy-trip",
+    "version": "1.0.0",
+    "description": "A simple blogging website for travellers",
+    "keywords": [
+        "node",
+        "express",
+        "mongodb",
+        "mongoose",
+        "helmet",
+        "morgan",
+        "dotenv",
+        "blog",
+        "blogging",
+        "website",
+        "travellers",
+        "travel",
+        "trips",
+        "trip",
+        "crazy",
+        "crazytrip"
+    ],
+    "homepage": "https://github.com/RaghuGannaram/crazyTrip",
+    "bugs": {
+        "url": "https://github.com/RaghuGannaram/crazyTrip/issues",
+        "email": "mail@raghugannaram.com"
+    },
+    "license": "MIT",
+    "private": true,
+    "author": {
+        "name": "Raghu Gannaram",
+        "email": "mail@raghugannaram.com",
+        "url": "https://raghugannaram.com"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RaghuGannaram/crazyTrip"
+    },
+    "type": "commonjs",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development LOG_LEVEL=info node src/server.js",
+        "dev": "cross-env NODE_ENV=development LOG_LEVEL=debug nodemon src/server.js"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "cross-env": "^7.0.3",
+        "dotenv": "^10.0.0",
+        "helmet": "^5.1.0",
+        "mongoose": "^5.12.14",
+        "morgan": "^1.10.0",
+        "winston": "^3.11.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    },
+    "engines": {
+        "node": ">=20.10.0",
+        "npm": ">=10.2.3"
+    }
 }

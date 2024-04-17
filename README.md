@@ -1,2 +1,2 @@
 # crazyTrip
-A Blog for Travellers who wants to share their travel experiences
+A simple blogging website for travellers

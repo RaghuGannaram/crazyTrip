@@ -5,8 +5,8 @@ const { styleSheets } = require("./styleSheetHandler");
 const { mainScript } = require("./mainScriptHandler");
 const { publicImages } = require("./publicAssetHandler");
 const { dataBase } = require("./dataBaseHandler");
-const { connectToDataBase } = require("../utilities/database.js");
-const { validPathList } = require("../utilities/validPaths");
+const { connectToDataBase } = require("../utils/database.js");
+const { validPathList } = require("../utils/validPaths");
 
 dotenv.config();
 connectToDataBase();

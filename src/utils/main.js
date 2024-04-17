@@ -2,9 +2,9 @@ function readCookie(key){
   var keyeq = key+"="
   var cookie = document.cookie;
   if(cookie != null){
-    cookiearray = cookie.split(";")
-    for(var i=0; i < cookiearray.length; i++){
-      var cookieprop =cookiearray[i];
+    cookieArr = cookie.split(";")
+    for(var i=0; i < cookieArr.length; i++){
+      var cookieprop =cookieArr[i];
       while (cookieprop.charAt(0) == " ")
         cookieprop = cookieprop.substring(1, cookieprop.length);
       if (cookieprop.indexOf(keyeq) == 0)

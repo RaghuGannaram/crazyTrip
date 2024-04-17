@@ -1,5 +1,5 @@
 const db_model = require("../controller/db_module");
-const readCookie = require("../utilities/cookieParser");
+const readCookie = require("../utils/cookieParser");
 
 function dataBase(req, res, path) {
   switch (path) {

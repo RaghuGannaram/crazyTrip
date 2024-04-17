@@ -8,8 +8,8 @@ function styleSheets(req, res, path) {
       res.end();
     }
   
-    if (path == "/css/style.css") renderSheet("./view/css/style.css");
-    if (path == "/css/normalize.css") renderSheet("./view/css/normalize.css");
+    if (path == "/css/style.css") renderSheet("./src/view/css/style.css");
+    if (path == "/css/normalize.css") renderSheet("./src/view/css/normalize.css");
   }
 
   module.exports = {
